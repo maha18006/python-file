@@ -1,0 +1,48 @@
+#Email checker
+text = input("Enter the email text: ").lower()
+risky_words = ["urgent", "verify", "password", "bank", "click"]
+found = False
+for word in risky_words:
+    if word in text:
+        found = True
+        break
+if found:
+    print("Warning: This email may be risky")
+else:
+    print("This email looks safe")
+
+
+#Domain Check
+domain1 = input("Enter first domain: ").lower()
+domain2 = input("Enter second domain: ").lower()
+def normalize(domain):
+    return (domain
+            .replace("0", "o")
+            .replace("1", "l")
+            .replace("3", "e")
+            .replace("@", "a"))
+d1 = normalize(domain1)
+d2 = normalize(domain2)
+if d1 == d2:
+    print("Suspicious domain")
+else:
+    print("Domains look different")
+domain1 = input("Enter first domain: ").lower()
+domain2 = input("Enter second domain: ").lower()
+
+domain1 = domain1.replace("0", "o")
+domain1 = domain1.replace("1", "l")
+domain1 = domain1.replace("3", "e")
+domain1 = domain1.replace("@", "a")
+
+domain2 = domain2.replace("0", "o")
+domain2 = domain2.replace("1", "l")
+domain2 = domain2.replace("3", "e")
+domain2 = domain2.replace("@", "a")
+
+if domain1 == domain2:
+    print("Suspicious domain")
+else:
+    print("Domains look different")
+
+
